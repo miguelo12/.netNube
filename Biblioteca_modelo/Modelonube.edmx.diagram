@@ -4,9 +4,9 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="05a8e7427bbc4cf38ad24240d43049ca" Name="Diagram1">
-        <EntityTypeShape EntityType="PruebaNubeModel.Comentario" Width="1.5" PointX="0.75" PointY="0.75" />
-        <EntityTypeShape EntityType="PruebaNubeModel.User" Width="1.5" PointX="2.75" PointY="0.75" />
+      <Diagram DiagramId="b9ea8a0e98bc42a0b218d9e4347dabcf" Name="Diagram1">
+        <EntityTypeShape EntityType="PruebaNubeModel.Comentario" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PruebaNubeModel.User" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

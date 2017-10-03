@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\miguel\Desktop\PruebaNube\Biblioteca_modelo\Modelonube.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\darkg\Source\Repos\.netNube\Biblioteca_modelo\Modelonube.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

@@ -8,13 +8,14 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<meta name="keywords">
-		<link rel="stylesheet" href="assets/css/main.css" type="text/css" />
 		<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
-		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>		
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+        <link rel="stylesheet" href="assets/css/tables.css" type="text/css" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>		
 	</head>
 	<body>
+        <form runat="server">
+		
 		<!-- Page Wrapper -->
 			<div id="page-wrapper">
 				<!-- Wrapper -->
@@ -90,38 +91,153 @@
 
 						<!-- Panel -->
 							<section class="panel color4-alt">
-								<div class="intro color4">
-									<h2 class="major">Contacto</h2>
-									<p>Comunicate con nosotros y te daremos la solucion que tu empresa y/o emprendimiento necesita para seguir adelante.</p>
-								</div>
 								<div class="inner columns divided">
 									<div class="span-3-25">
-										<form method="post" action="#">
-											<div class="field half">
-												<label for="name">Nombre</label>
-												<input type="text" name="name" id="name" />
-											</div>
-											<div class="field half">
-												<label for="email">Email</label>
-												<input type="email" name="email" id="email" />
-											</div>
-											<div class="field">
-												<label for="message">Mensaje</label>
-												<textarea name="message" id="message" rows="4"></textarea>
-											</div>
-											<ul class="actions">
-												<li><input type="submit" value="Enviar" class="button special" /></li>
-											</ul>
-										</form>
-									</div>
-									<div class="span-1-5">
-										<ul class="contact-icons color1">
-											<li class="icon fa-twitter"><a href="#">@SafetyLoad</a></li>
-											<li class="icon fa-facebook"><a href="#">facebook.com/SafetyLoad</a></li>
-											<li class="icon fa-snapchat-ghost"><a href="#">@SafetyLoad</a></li>
-											<li class="icon fa-instagram"><a href="#">@SafetyLoad</a></li>
-											<li class="icon fa-medium"><a href="#">medium.com/SafetyLoad</a></li>
-										</ul>
+                                        <asp:ListView ID="ListView1" runat="server" DataSourceID="EntityDataSource1" DataKeyNames="IdComentario" InsertItemPosition="LastItem">
+                                            <AlternatingItemTemplate>
+                                                
+                                                    <tr style="">
+                                                        <td>
+                                                            <asp:Button ID="DeleteButton" runat="server" CommandName="Delete" Text="Delete" />
+                                                            <asp:Button ID="EditButton" runat="server" CommandName="Edit" Text="Edit" />
+                                                        </td>
+                                                        <td>
+                                                            <asp:Label ID="IdComentarioLabel" runat="server" Text='<%# Eval("IdComentario") %>' />
+                                                        </td>
+                                                        <td>
+                                                            <asp:Label ID="TextoLabel" runat="server" Text='<%# Eval("Texto") %>' />
+                                                        </td>
+                                                        <td>
+                                                            <asp:Label ID="EmailLabel" runat="server" Text='<%# Eval("Email") %>' />
+                                                        </td>
+                                                        <td>
+                                                            <asp:Label ID="NombreLabel" runat="server" Text='<%# Eval("Nombre") %>' />
+                                                        </td>
+                                                    </tr>
+                                                
+                                            </AlternatingItemTemplate>
+                                            <EditItemTemplate>
+                                                <tr style="">
+                                                    <td>
+                                                        <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Update" />
+                                                        <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancel" />
+                                                    </td>
+                                                    <td>
+                                                        <asp:Label ID="IdComentarioLabel1" runat="server" Text='<%# Eval("IdComentario") %>' />
+                                                    </td>
+                                                    <td>
+                                                        <asp:TextBox ID="TextoTextBox" runat="server" Text='<%# Bind("Texto") %>' />
+                                                    </td>
+                                                    <td>
+                                                        <asp:TextBox ID="EmailTextBox" runat="server" Text='<%# Bind("Email") %>' />
+                                                    </td>
+                                                    <td>
+                                                        <asp:TextBox ID="NombreTextBox" runat="server" Text='<%# Bind("Nombre") %>' />
+                                                    </td>
+                                                </tr>
+                                            </EditItemTemplate>
+                                            <EmptyDataTemplate>
+                                                <table runat="server" style="">
+                                                    <tr>
+                                                        <td>No data was returned.</td>
+                                                    </tr>
+                                                </table>
+                                            </EmptyDataTemplate>
+                                            <InsertItemTemplate>
+                                                <tr style="">
+                                                    <td>
+                                                        <asp:Button  ID="InsertButton" runat="server" CommandName="Insert" Text="Insert" />
+                                                        <asp:Button  ID="CancelButton" runat="server" CommandName="Cancel" Text="Clear" />
+                                                    </td>
+                                                    <td>
+                                                        
+                                                    </td>
+                                                    <td>
+                                                        <asp:TextBox ID="TextoTextBox" runat="server" Text='<%# Bind("Texto") %>' />
+                                                    </td>
+                                                    <td>
+                                                        <asp:TextBox ID="EmailTextBox" runat="server" Text='<%# Bind("Email") %>' />
+                                                    </td>
+                                                    <td>
+                                                        <asp:TextBox ID="NombreTextBox" runat="server" Text='<%# Bind("Nombre") %>' />
+                                                    </td>
+                                                </tr>
+                                            </InsertItemTemplate>
+                                            <ItemTemplate>
+                                                <tr style="">
+                                                    <td>
+                                                        <asp:Button ID="DeleteButton" runat="server" CommandName="Delete" Text="Delete" />
+                                                        <asp:Button ID="EditButton" runat="server" CommandName="Edit" Text="Edit" />
+                                                    </td>
+                                                    <td>
+                                                        <asp:Label ID="IdComentarioLabel" runat="server" Text='<%# Eval("IdComentario") %>' />
+                                                    </td>
+                                                    <td>
+                                                        <asp:Label ID="TextoLabel" runat="server" Text='<%# Eval("Texto") %>' />
+                                                    </td>
+                                                    <td>
+                                                        <asp:Label ID="EmailLabel" runat="server" Text='<%# Eval("Email") %>' />
+                                                    </td>
+                                                    <td>
+                                                        <asp:Label ID="NombreLabel" runat="server" Text='<%# Eval("Nombre") %>' />
+                                                    </td>
+                                                </tr>
+                                            </ItemTemplate>
+                                            <LayoutTemplate>
+                                                <table class="table table-bordered" runat="server">
+                                                    <tr runat="server">
+                                                        <td runat="server">
+                                                            <table id="itemPlaceholderContainer" runat="server" border="0" style="">
+                                                                <tr runat="server" style="">
+                                                                    <th runat="server"></th>
+                                                                    <th runat="server">IdComentario</th>
+                                                                    <th runat="server">Texto</th>
+                                                                    <th runat="server">Email</th>
+                                                                    <th runat="server">Nombre</th>
+                                                                </tr>
+                                                                <tr id="itemPlaceholder" runat="server">
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    <tr runat="server">
+                                                        <td runat="server" style="">
+                                                            <asp:DataPager ID="DataPager1" runat="server">
+                                                                <Fields>
+                                                                    <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                                                    <asp:NumericPagerField />
+                                                                    <asp:NextPreviousPagerField ButtonType="Button" ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                                                </Fields>
+                                                            </asp:DataPager>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </LayoutTemplate>
+                                            <SelectedItemTemplate>
+                                                <tr style="">
+                                                    <td>
+                                                        <asp:Button ID="DeleteButton" runat="server" CommandName="Delete" Text="Delete" />
+                                                        <asp:Button ID="EditButton" runat="server" CommandName="Edit" Text="Edit" />
+                                                    </td>
+                                                    <td>
+                                                        <asp:Label ID="IdComentarioLabel" runat="server" Text='<%# Eval("IdComentario") %>' />
+                                                    </td>
+                                                    <td>
+                                                        <asp:Label ID="TextoLabel" runat="server" Text='<%# Eval("Texto") %>' />
+                                                    </td>
+                                                    <td>
+                                                        <asp:Label ID="EmailLabel" runat="server" Text='<%# Eval("Email") %>' />
+                                                    </td>
+                                                    <td>
+                                                        <asp:Label ID="NombreLabel" runat="server" Text='<%# Eval("Nombre") %>' />
+                                                    </td>
+                                                </tr>
+                                            </SelectedItemTemplate>
+                                        </asp:ListView>
+
+									    <asp:EntityDataSource ID="EntityDataSource1" runat="server" ConnectionString="name=PruebaNubeEntities" DefaultContainerName="PruebaNubeEntities" EnableFlattening="False" EntitySetName="Comentario" EnableDelete="True" EnableInsert="True" EnableUpdate="True">
+                                        </asp:EntityDataSource>
+
 									</div>
 								</div>
 							</section>
@@ -150,10 +266,13 @@
 
 </div>							
 							</section>
-
+-->
+</div>	</div>	
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/main.js"></script>
+                        									
+										</form>
 </body>
 </html>
