@@ -14,7 +14,11 @@ namespace Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            bool val1 = (System.Web.HttpContext.Current.User != null) && System.Web.HttpContext.Current.User.Identity.IsAuthenticated;
 
+            if (val1) {
+                FormsAuthentication.SignOut();
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)

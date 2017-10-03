@@ -26,6 +26,7 @@
                                                     <tr style="">
                                                         <td>
                                                             <asp:Button ID="DeleteButton" runat="server" CommandName="Delete" Text="Delete" CssClass="pure-button" />
+                                                            <br/>
                                                             <asp:Button ID="EditButton" runat="server" CommandName="Edit" Text="Edit" CssClass="pure-button" />
                                                         </td>
                                                         <td>
@@ -47,6 +48,7 @@
                                                 <tr style="">
                                                     <td>
                                                         <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Update" CssClass="pure-button" />
+                                                        <br/>
                                                         <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancel" CssClass="pure-button" />
                                                     </td>
                                                     <td>
@@ -74,6 +76,7 @@
                                                 <tr style="">
                                                     <td>
                                                         <asp:Button  ID="InsertButton" runat="server" ValidationGroup="Three" CommandName="Insert" Text="Insert" CssClass="pure-button" />
+                                                        <br/>
                                                         <asp:Button  ID="CancelButton" runat="server" ValidationGroup="Three" CommandName="Cancel" Text="Clear" CssClass="pure-button" />
                                                     </td>
                                                     <td>
@@ -86,7 +89,7 @@
                                                     <td>
                                                         <asp:TextBox ID="EmailTextBox" runat="server" Text='<%# Bind("Email") %>' />
                                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ValidationGroup="Three" ControlToValidate="EmailTextBox" runat="server" ErrorMessage="Vacio"></asp:RequiredFieldValidator>
-                                                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" ValidationGroup="Three" runat="server" ControlToValidate="EmailTextBox" ErrorMessage="RegularExpressionValidator" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+                                                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" ValidationGroup="Three" runat="server" ControlToValidate="EmailTextBox" ErrorMessage="Email incorrecto" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
                                                     </td>
                                                     <td>
                                                         <asp:TextBox ID="NombreTextBox" runat="server" ValidationGroup="Three" Text='<%# Bind("Nombre") %>' />
@@ -98,6 +101,7 @@
                                                 <tr style="">
                                                     <td>
                                                         <asp:Button ID="DeleteButton" runat="server" CommandName="Delete" Text="Delete" CssClass="pure-button" />
+                                                        <br/>
                                                         <asp:Button ID="EditButton" runat="server" CommandName="Edit" Text="Edit" CssClass="pure-button" />
                                                     </td>
                                                     <td>
@@ -148,6 +152,7 @@
                                                 <tr style="">
                                                     <td>
                                                         <asp:Button ID="DeleteButton" runat="server" CommandName="Delete" Text="Delete" CssClass="pure-button" />
+                                                        <br/>
                                                         <asp:Button ID="EditButton" runat="server" CommandName="Edit" Text="Edit" CssClass="pure-button" />
                                                     </td>
                                                     <td>
