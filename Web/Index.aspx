@@ -101,19 +101,23 @@
 
 											<div class="field half">
 												<label for="nombre">Nombre</label>
-                                                <asp:TextBox ID="nombre" runat="server"></asp:TextBox>
+                                                <asp:TextBox ID="nombre" ValidationGroup="Two" runat="server"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" ValidationGroup="Two" runat="server" ControlToValidate="nombre" ErrorMessage="Nombre vacio"></asp:RequiredFieldValidator>
 											</div>
 											<div class="field half">
 												<label for="emails">Email</label>
-                                                <asp:TextBox ID="emails" runat="server"></asp:TextBox>
+                                                <asp:TextBox ID="emails" ValidationGroup="Two" runat="server"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" ValidationGroup="Two" runat="server" ErrorMessage="Email vacio" ControlToValidate="emails" ></asp:RequiredFieldValidator>
 											</div>
 											<div class="field">
 												<label for="mensaje">Mensaje</label>
-                                                <asp:TextBox id="mensaje" TextMode="multiline" Columns="20" Rows="4" runat="server" />
+                                                <asp:TextBox id="mensaje" ValidationGroup="Two" TextMode="multiline" Columns="20" Rows="4" runat="server" />
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" ValidationGroup="Two" runat="server" ErrorMessage="Mensaje vacio" ControlToValidate="mensaje"></asp:RequiredFieldValidator>
 											</div>
                                         <br>
 											<ul class="actions">
-												<li><asp:Button ID="Button1" runat="server" Text="Enviar" OnClick="Button1_Click" CssClass="button special" /></li>
+                                                <asp:Label ID="Msg" ForeColor="red" runat="server" />
+												<li><asp:Button ID="Button1" ValidationGroup="Two" runat="server" Text="Enviar" OnClick="Button1_Click" CssClass="button special" /></li>
 											</ul>
 										
 									</div>
@@ -136,16 +140,18 @@
                                                 <h2 class="major">Login</h2>
 											    <div class="field half">
 												    <label for="name">Nombre de usuario</label>
-                                                    <asp:TextBox ID="username" runat="server"></asp:TextBox>
+                                                    <asp:TextBox ID="username" ValidationGroup="One" runat="server"></asp:TextBox>
+                                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Usuario vacio" ValidationGroup="One" ControlToValidate="username"></asp:RequiredFieldValidator>
 											    </div>
 
 											    <div class="field half">
 												    <label for="clave">Clave</label>
-                                                    <asp:TextBox ID="password" TextMode="Password" runat="server"></asp:TextBox>
+                                                    <asp:TextBox ID="password" ValidationGroup="One" TextMode="Password" runat="server"></asp:TextBox>
+                                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Password vacio" ValidationGroup="One" ControlToValidate="password"></asp:RequiredFieldValidator>
 											    </div>
 											    <br>
 											    <ul class="actions">
-												    <li><asp:Button ID="Button2" runat="server" Text="Ingresar" OnClick="Button2_Click" /></li>
+												    <li><asp:Button ID="Button2" ValidationGroup="One" runat="server" Text="Ingresar" OnClick="Button2_Click" /></li>
 											    </ul>
 									    </div>
                                         <div class="span-1-5">

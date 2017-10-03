@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Biblioteca_modelo;
 using Biblioteca.Clases;
+using System.Web.Security;
 
 namespace Web
 {
@@ -40,6 +41,7 @@ namespace Web
                 usuarioCRUD.usuarioclass.Pass = password.Text;
                 if (usuarioCRUD.selectUserPass())
                 {
+                    FormsAuthentication.SetAuthCookie(username.Text, false);
                     Server.Transfer("CrudUsuario.aspx");
                 }
             } 
