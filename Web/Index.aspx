@@ -108,6 +108,7 @@
 												<label for="emails">Email</label>
                                                 <asp:TextBox ID="emails" ValidationGroup="Two" runat="server"></asp:TextBox>
                                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator4" ValidationGroup="Two" runat="server" ErrorMessage="Email vacio" ControlToValidate="emails" ></asp:RequiredFieldValidator>
+                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ValidationGroup="Two" ControlToValidate="emails" ErrorMessage="Email invalido" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
 											</div>
 											<div class="field">
 												<label for="mensaje">Mensaje</label>

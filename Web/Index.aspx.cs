@@ -41,8 +41,10 @@ namespace Web
                 usuarioCRUD.usuarioclass.Pass = password.Text;
                 if (usuarioCRUD.selectUserPass())
                 {
-                    FormsAuthentication.SetAuthCookie(username.Text, false);
-                    Server.Transfer("CrudUsuario.aspx");
+                    FormsAuthentication.RedirectFromLoginPage(username.Text,false);
+                }
+                else {
+                    Msg.Text = "Credenciales invalidas. Porfavor intentelo denuevo.";
                 }
             } 
         }
