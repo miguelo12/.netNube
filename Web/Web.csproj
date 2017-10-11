@@ -189,6 +189,10 @@
       <Project>{a5daf4bb-01e4-460b-8d63-1f0aa5be74f1}</Project>
       <Name>Biblioteca_modelo</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Biblioteca_seguridad\Biblioteca_seguridad.csproj">
+      <Project>{875ADF5C-07E6-4F99-886E-3151A6B37C2D}</Project>
+      <Name>Biblioteca_seguridad</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

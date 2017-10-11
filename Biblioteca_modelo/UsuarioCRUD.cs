@@ -61,5 +61,27 @@ namespace Biblioteca_modelo
             return qUser>0;
         }
 
+        public Boolean selectUserName(String UserNameEntregado)
+        {
+            var encontrado = (from q in DB.User
+                              where q.Username == UserNameEntregado
+                              select q).Count();
+
+            return encontrado > 0;
+        }
+
+        public String retornarContraseña()
+        {
+            //Considerenado que la contraseña ya esta encriptada
+            usuario.Username = usuarioclass.Username;
+
+            var qPass = (from q in DB.User
+                         where q.Username == usuario.Username
+                         select q.Pass);
+            String pass_encontrada = qPass.First().ToString();
+            return pass_encontrada;
+        }
+
+
     }
 }

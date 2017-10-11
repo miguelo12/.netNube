@@ -117,7 +117,7 @@
 											</div>
                                         <br>
 											<ul class="actions">
-                                                <asp:Label ID="Msg" ForeColor="red" runat="server" />
+                                                
 												<li><asp:Button ID="Button1" ValidationGroup="Two" runat="server" Text="Enviar" OnClick="Button1_Click" CssClass="button special" /></li>
 											</ul>
 										
@@ -149,6 +149,7 @@
 												    <label for="clave">Clave</label>
                                                     <asp:TextBox ID="password" ValidationGroup="One" TextMode="Password" runat="server"></asp:TextBox>
                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Password vacio" ValidationGroup="One" ControlToValidate="password"></asp:RequiredFieldValidator>
+                                                    <asp:Label ID="Msg" ForeColor="blue" runat="server" />
 											    </div>
 											    <br>
 											    <ul class="actions">

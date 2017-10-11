@@ -173,7 +173,9 @@
 
 									    <asp:EntityDataSource ID="EntityDataSource1" runat="server" ConnectionString="name=PruebaNubeEntities" DefaultContainerName="PruebaNubeEntities" EnableFlattening="False" EntitySetName="Comentario" EnableDelete="True" EnableInsert="True" EnableUpdate="True">
                                         </asp:EntityDataSource>
-                </div>
+                
+            <asp:Button ID="Button1" runat="server" Text="Salir" OnClick="Button1_Click" CssClass="pure-button" />
+            </div>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
