@@ -23,7 +23,6 @@ namespace Web
         protected void Button1_Click(object sender, EventArgs e)
         {
             FormsAuthentication.SignOut();
-            Server.Transfer("Index.aspx");
         }
     }
 }
