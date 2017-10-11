@@ -25,13 +25,18 @@ namespace Web
         protected void Button1_Click(object sender, EventArgs e)
         {
             if (!(emails.Text.Trim().Equals("")) && !(mensaje.Text.Trim().Equals("")) && !(nombre.Text.Trim().Equals(""))) {
-                ComentarioCRUD comentarioCRUD = new ComentarioCRUD();
-                comentarioCRUD.comentarioclass = new ComentarioClass();
-                comentarioCRUD.comentarioclass.Email = emails.Text;
-                comentarioCRUD.comentarioclass.Nombre = nombre.Text;
-                comentarioCRUD.comentarioclass.Mensaje = mensaje.Text;
-                comentarioCRUD.AddComentario();
-                Server.Transfer("Index.aspx");
+                SQLInjection auxSQL = new SQLInjection();
+
+                if (!auxSQL.caracteresInvalidos(emails.Text) && !auxSQL.caracteresInvalidos(mensaje.Text) && !auxSQL.caracteresInvalidos(nombre.Text))
+                {
+                    ComentarioCRUD comentarioCRUD = new ComentarioCRUD();
+                    comentarioCRUD.comentarioclass = new ComentarioClass();
+                    comentarioCRUD.comentarioclass.Email = emails.Text;
+                    comentarioCRUD.comentarioclass.Nombre = nombre.Text;
+                    comentarioCRUD.comentarioclass.Mensaje = mensaje.Text;
+                    comentarioCRUD.AddComentario();
+                    Server.Transfer("Index.aspx");
+                }
             }
         }
 
