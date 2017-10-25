@@ -75,8 +75,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\css\tables.css" />
+    <Content Include="assets\js\jquery-3.2.1.js" />
+    <Content Include="assets\js\jquery-3.2.1.min.js" />
     <Content Include="CrudUsuario.aspx" />
-    <Content Include="Panel.aspx" />
+    <Content Include="Global.asax" />
     <Content Include="packages.config" />
     <Content Include="assets\fonts\fontawesome-webfont.eot" />
     <Content Include="assets\fonts\fontawesome-webfont.ttf" />
@@ -128,8 +130,6 @@
     <Content Include="assets\fonts\fontawesome-webfont.svg" />
     <Content Include="assets\js\demos.js" />
     <Content Include="assets\js\jquery-ui.min.js" />
-    <Content Include="assets\js\jquery.min.js" />
-    <Content Include="assets\js\jquerys.min.js" />
     <Content Include="assets\js\main.js" />
     <Content Include="assets\js\mapa.js" />
     <Content Include="assets\js\skel.min.js" />
@@ -175,12 +175,8 @@
     <Compile Include="CrudUsuario.aspx.designer.cs">
       <DependentUpon>CrudUsuario.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Panel.aspx.cs">
-      <DependentUpon>Panel.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Panel.aspx.designer.cs">
-      <DependentUpon>Panel.aspx</DependentUpon>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>

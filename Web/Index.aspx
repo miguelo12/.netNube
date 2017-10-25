@@ -9,7 +9,6 @@
 		<meta name="keywords">
 		<link rel="stylesheet" href="assets/css/main.css" type="text/css" />
 		<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
 		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>		
 	</head>

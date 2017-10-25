@@ -8,10 +8,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Vista", "Vista", "{82D08E24-CFD5-45AC-A4D3-D19E8025870F}"
 	ProjectSection(SolutionItems) = preProject
 		..\..\html5up-ethereal\bg.jpg = ..\..\html5up-ethereal\bg.jpg
-		..\..\html5up-ethereal\prueba.html = ..\..\html5up-ethereal\prueba.html
 		..\..\html5up-ethereal\README.txt = ..\..\html5up-ethereal\README.txt
-		..\..\html5up-ethereal\Rutas.html = ..\..\html5up-ethereal\Rutas.html
-		..\..\html5up-ethereal\Sesion.html = ..\..\html5up-ethereal\Sesion.html
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Negocio", "Negocio", "{2C026384-10FE-4AC7-9330-DAE05736DE6D}"
