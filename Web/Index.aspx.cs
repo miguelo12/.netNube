@@ -8,8 +8,6 @@ using Biblioteca_modelo;
 using Biblioteca.Clases;
 using System.Web.Security;
 using Biblioteca_seguridad;
-using System.Web.Services;
-using System.Net;
 
 namespace Web
 {
