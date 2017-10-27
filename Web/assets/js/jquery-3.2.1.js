@@ -10263,7 +10263,7 @@ var onloadCallback = function () {
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 success: function (r) {
-                    var captchaResponse = jQuery.parseJSON(r);
+                    var captchaResponse = jQuery.parseJSON(r.d);
                     if (captchaResponse.success) {
                         $("[id*=txtCaptcha]").val(captchaResponse.success);
                         $("[id*=rfvCaptcha]").hide();
