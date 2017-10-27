@@ -152,7 +152,7 @@
 											    </div>
 											    <br>
                                                 <script type="text/javascript" src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
-                                                <div id="dvCaptcha" data-sitekey="6LefFTYUAAAAABo8ZFNPCxjcjODeW_CeIb6eXMO7"></div>                                                
+                                                <div class="g-recaptcha" data-sitekey="6LefFTYUAAAAABo8ZFNPCxjcjODeW_CeIb6eXMO7"></div>                                                
                                                 <asp:TextBox ID="txtCaptcha" ValidationGroup="One" runat="server" Style="display: none" />
                                                 <asp:RequiredFieldValidator ID = "rfvCaptcha" ValidationGroup="One" ErrorMessage="Captcha validation is required." ControlToValidate="txtCaptcha"
                                                      runat="server" ForeColor = "Red" Display = "Dynamic" />
