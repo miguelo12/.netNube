@@ -10254,7 +10254,7 @@ return jQuery;
 
 var onloadCallback = function () {
     grecaptcha.render('dvCaptcha', {
-        'sitekey': '<%=ReCaptcha_Key %>',
+        'sitekey': '6LczdDUUAAAAAM5nwb215nQGfgvL5OvjN3dC1qBr',
         'callback': function (response) {
             $.ajax({
                 type: "POST",

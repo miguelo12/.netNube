@@ -15,8 +15,8 @@ namespace Web
 {
     public partial class Index : System.Web.UI.Page
     {
-        protected static string ReCaptcha_Key = "6LefFTYUAAAAABo8ZFNPCxjcjODeW_CeIb6eXMO7";
-        protected static string ReCaptcha_Secret = "6LefFTYUAAAAAFv5640UWUYLRoYrsX4WSFYEwkCO";
+        protected static string ReCaptcha_Key = "6LczdDUUAAAAAM5nwb215nQGfgvL5OvjN3dC1qBr";
+        protected static string ReCaptcha_Secret = "6LczdDUUAAAAAB-qDloMpkSBHwHVAWTYnzpjBOCI";
 
         [WebMethod]
         public static string VerifyCaptcha(string response)
