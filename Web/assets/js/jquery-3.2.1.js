@@ -10250,4 +10250,31 @@ if ( !noGlobal ) {
 
 
 return jQuery;
-} );
+});
+
+var onloadCallback = function () {
+    grecaptcha.render('dvCaptcha', {
+        'sitekey': '<%=ReCaptcha_Key %>',
+        'callback': function (response) {
+            $.ajax({
+                type: "POST",
+                url: "Index.aspx/VerifyCaptcha",
+                data: "{response: '" + response + "'}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (r) {
+                    var captchaResponse = jQuery.parseJSON(r.d);
+                    if (captchaResponse.success) {
+                        $("[id*=txtCaptcha]").val(captchaResponse.success);
+                        $("[id*=rfvCaptcha]").hide();
+                    } else {
+                        $("[id*=txtCaptcha]").val("");
+                        $("[id*=rfvCaptcha]").show();
+                        var error = captchaResponse["error-codes"][0];
+                        $("[id*=rfvCaptcha]").html("RECaptcha error. " + error);
+                    }
+                }
+            });
+        }
+    });
+};

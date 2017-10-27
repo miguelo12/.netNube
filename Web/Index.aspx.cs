@@ -8,17 +8,33 @@ using Biblioteca_modelo;
 using Biblioteca.Clases;
 using System.Web.Security;
 using Biblioteca_seguridad;
+using System.Web.Services;
+using System.Net;
 
 namespace Web
 {
     public partial class Index : System.Web.UI.Page
     {
+        protected static string ReCaptcha_Key = "6LczdDUUAAAAAM5nwb215nQGfgvL5OvjN3dC1qBr";
+        protected static string ReCaptcha_Secret = "6LczdDUUAAAAAB-qDloMpkSBHwHVAWTYnzpjBOCI";
+
+        [WebMethod]
+        public static string VerifyCaptcha(string response)
+        {
+            string url = "https://www.google.com/recaptcha/api/siteverify=" + ReCaptcha_Secret + "&response=" + response;
+            return (new WebClient()).DownloadString(url);
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            bool val1 = (System.Web.HttpContext.Current.User != null) && System.Web.HttpContext.Current.User.Identity.IsAuthenticated;
+            if (!Page.IsPostBack)
+            {
+                bool val1 = (System.Web.HttpContext.Current.User != null) && System.Web.HttpContext.Current.User.Identity.IsAuthenticated;
 
-            if (val1) {
-                Server.Transfer("CrudUsuario.aspx");
+                if (val1)
+                {
+                    Server.Transfer("CrudUsuario.aspx");
+                }
             }
         }
 
