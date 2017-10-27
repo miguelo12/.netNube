@@ -10265,13 +10265,13 @@ var onloadCallback = function () {
                 success: function (r) {
                     var captchaResponse = jQuery.parseJSON(r.d);
                     if (captchaResponse.success) {
-                        $("[id*=txtCaptcha]").val(captchaResponse.success);
-                        $("[id*=rfvCaptcha]").hide();
+                        $("#txtCaptcha").val(captchaResponse.success);
+                        $("#rfvCaptcha").hide();
                     } else {
-                        $("[id*=txtCaptcha]").val("");
-                        $("[id*=rfvCaptcha]").show();
+                        $("#txtCaptcha").val("");
+                        $("#rfvCaptcha").show();
                         var error = captchaResponse["error-codes"][0];
-                        $("[id*=rfvCaptcha]").html("RECaptcha error. " + error);
+                        $("#rfvCaptcha").html("RECaptcha error. " + error);
                     }
                 }
             });
