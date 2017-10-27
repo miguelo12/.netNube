@@ -10251,30 +10251,3 @@ if ( !noGlobal ) {
 
 return jQuery;
 });
-
-var onloadCallback = function () {
-    grecaptcha.render('dvCaptcha', {
-        'sitekey': '6LczdDUUAAAAAM5nwb215nQGfgvL5OvjN3dC1qBr',
-        'callback': function (response) {
-            $.ajax({
-                type: "POST",
-                url: "Index.aspx/VerifyCaptcha",
-                data: "{response: '" + response + "'}",
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                success: function (r) {
-                    var captchaResponse = jQuery.parseJSON(r.d);
-                    if (captchaResponse.success) {
-                        $("#txtCaptcha").val(captchaResponse.success);
-                        $("#rfvCaptcha").hide();
-                    } else {
-                        $("#txtCaptcha").val("");
-                        $("#rfvCaptcha").show();
-                        var error = captchaResponse["error-codes"][0];
-                        $("#rfvCaptcha").html("RECaptcha error. " + error);
-                    }
-                }
-            });
-        }
-    });
-};

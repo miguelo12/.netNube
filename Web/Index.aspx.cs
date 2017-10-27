@@ -15,16 +15,6 @@ namespace Web
 {
     public partial class Index : System.Web.UI.Page
     {
-        protected static string ReCaptcha_Key = "6LczdDUUAAAAAM5nwb215nQGfgvL5OvjN3dC1qBr";
-        protected static string ReCaptcha_Secret = "6LczdDUUAAAAAB-qDloMpkSBHwHVAWTYnzpjBOCI";
-
-        [WebMethod]
-        public static string VerifyCaptcha(string response)
-        {
-            string url = "https://www.google.com/recaptcha/api/siteverify=" + ReCaptcha_Secret + "&response=" + response;
-            return (new WebClient()).DownloadString(url);
-        }
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)

@@ -151,11 +151,6 @@
                                                     <asp:Label ID="Msg" ForeColor="blue" runat="server" />
 											    </div>
 											    <br>
-                                                <script type="text/javascript" src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
-                                                <div id="dvCaptcha"></div>                                                
-                                                <asp:TextBox ID="txtCaptcha" ValidationGroup="One" runat="server" Style="display: none" />
-                                                <asp:RequiredFieldValidator ID = "rfvCaptcha" ValidationGroup="One" ErrorMessage="Captcha validation is required." ControlToValidate="txtCaptcha"
-                                                     runat="server" ForeColor = "Red" Display = "Dynamic" />
 											    <ul class="actions">
 												    <li><asp:Button ID="Button2" ValidationGroup="One" runat="server" Text="Ingresar" OnClick="Button2_Click" /></li>
 											    </ul>
