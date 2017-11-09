@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="Web.Index" %>
-
+<%@ Register TagPrefix="recaptcha" Namespace="Recaptcha" Assembly="Recaptcha" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -150,6 +150,9 @@
                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Password vacio" ValidationGroup="One" ControlToValidate="password"></asp:RequiredFieldValidator>
                                                     <asp:Label ID="Msg" ForeColor="blue" runat="server" />
 											    </div>
+                                                <div class="field half">
+                                                    <recaptcha:RecaptchaControl ID="recaptcha" ValidationGroup="One" runat="server" PublicKey="6LefFTYUAAAAABo8ZFNPCxjcjODeW_CeIb6eXMO7" PrivateKey="6LefFTYUAAAAAFv5640UWUYLRoYrsX4WSFYEwkCO" />
+                                                </div>
 											    <br>
 											    <ul class="actions">
 												    <li><asp:Button ID="Button2" ValidationGroup="One" runat="server" Text="Ingresar" OnClick="Button2_Click" /></li>

@@ -47,40 +47,46 @@ namespace Web
         protected void Button2_Click(object sender, EventArgs e)
         {
             SQLInjection auxSQL = new SQLInjection();
-
-            if (!auxSQL.caracteresInvalidos(username.Text) && !auxSQL.caracteresInvalidos(password.Text))
+            if (Page.IsValid)
             {
-                EncriptarSHA512 encriptarSHA = new EncriptarSHA512();
-                String auxClaveDigitada = encriptarSHA.encriptarSHA512(this.password.Text);
-                UsuarioCRUD auxCrud = new UsuarioCRUD();
-
-                if (auxCrud.selectUserName(username.Text))
+                if (!auxSQL.caracteresInvalidos(username.Text) && !auxSQL.caracteresInvalidos(password.Text))
                 {
-                    //Existe Usuario Ahora comparar sus contraseñas
-                    UsuarioCRUD usuarioCRUD = new UsuarioCRUD();
-                    usuarioCRUD.usuarioclass = new UsuarioClass();
-                    usuarioCRUD.usuarioclass.Username = username.Text;
+                    EncriptarSHA512 encriptarSHA = new EncriptarSHA512();
+                    String auxClaveDigitada = encriptarSHA.encriptarSHA512(this.password.Text);
+                    UsuarioCRUD auxCrud = new UsuarioCRUD();
 
-                    if (usuarioCRUD.retornarContraseña().Equals(auxClaveDigitada))
+                    if (auxCrud.selectUserName(username.Text))
                     {
-                        //Ambas Contraseñas iguales entonces entra
-                        FormsAuthentication.RedirectFromLoginPage(username.Text, false);
+                        //Existe Usuario Ahora comparar sus contraseñas
+                        UsuarioCRUD usuarioCRUD = new UsuarioCRUD();
+                        usuarioCRUD.usuarioclass = new UsuarioClass();
+                        usuarioCRUD.usuarioclass.Username = username.Text;
+
+                        if (usuarioCRUD.retornarContraseña().Equals(auxClaveDigitada))
+                        {
+                            //Ambas Contraseñas iguales entonces entra
+                            FormsAuthentication.RedirectFromLoginPage(username.Text, false);
+                        }
+                        else
+                        {
+                            Msg.Text = "ContraseñaIncorrecta. Porfavor intentelo denuevo.";
+                        }
                     }
                     else
                     {
-                        Msg.Text = "ContraseñaIncorrecta. Porfavor intentelo denuevo.";
+                        //No existe Usuario
+                        Msg.Text = "No existe Usuario. Porfavor intentelo denuevo.";
                     }
                 }
                 else
                 {
-                    //No existe Usuario
-                    Msg.Text = "No existe Usuario. Porfavor intentelo denuevo.";
+                    //intento de sqlInjection
+                    Msg.Text = "Credenciales Incorrectas. Porfavor intentelo denuevo.";
                 }
             }
             else
             {
-                //intento de sqlInjection
-                Msg.Text = "Credenciales Incorrectas. Porfavor intentelo denuevo.";
+                Msg.Text = "Captcha mal ingresado.";
             }
 
         }
